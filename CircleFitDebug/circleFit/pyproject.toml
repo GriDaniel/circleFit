@@ -1,0 +1,21 @@
+[project]
+# The name used for `pip install`. Can be different from the package folder name.
+name = "circleFit"
+version = "0.1.0"
+description = "A utility to reconstruct circles from arc segments in images."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "scipy",
+    "opencv-python",
+]
+
+[project.scripts]
+# This creates a command-line tool.
+# format is: command_name = "package.module:function_name"
+circle-fit = "core.process:process_images_in_folder_cli"
+
+[tool.setuptools]
+# Explicitly tell setuptools that our package is in the "core" directory.
+packages = ["core"]
